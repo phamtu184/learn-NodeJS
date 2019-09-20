@@ -1,0 +1,26 @@
+extends ../layouts/commons.pug
+block content
+  h1 Create Products
+  a(href="/") Back
+  form(action="/products/create", method="POST", enctype="multipart/form-data").was-validated
+    div.form-group
+      label(for="") Name Product
+      input.form-control(type="text", name="name", required)
+      div.valid-feedback Valid.
+      div.invalid-feedback Please fill out this fied
+    div.form-group
+      label(for="") Description
+      input.form-control(type="text", name="description", required)
+      div.valid-feedback Valid.
+      div.invalid-feedback Please fill out this fied
+    div.form-group
+      label(for="") Price
+      input.form-control(type="text", name="price", required)
+      div.valid-feedback Valid.
+      div.invalid-feedback Please fill out this fied
+    div.form-group
+      label(for="") Image:
+      input.form-control-file(type="file", name="img", required)
+      div.valid-feedback Valid.
+      div.invalid-feedback Please fill out this fied
+    button.btn.btn-primary Create

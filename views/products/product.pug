@@ -1,0 +1,18 @@
+extends ../layouts/commons.pug
+block content
+  div.container
+    h1 Products
+    .row
+      each product in products
+        .col-sm-6.col-md-4.col-lg-3
+          .card.mb-3
+            img.card-img-top(src= product.img)
+            .card-body
+              h4.card-title= product.name
+              p.card-text= product.description
+              p.card-text= product.price
+              a.btn.btn-primary.stretched-link(href='#') Buy 
+      ul.pagination#pagination
+        
+
+

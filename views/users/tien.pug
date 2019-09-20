@@ -1,0 +1,56 @@
+extends ../layouts/commons.pug
+block content
+  h1 Users
+  // Button to Open the Modal
+  button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal')
+    | Open modal
+  // The Modal
+  #myModal.modal.fade
+    .modal-dialog.modal-md
+      .modal-content
+        // Modal Header
+        .modal-header
+          h4.modal-title Modal Heading
+          button.close(type='button', data-dismiss='modal') &times;
+        // Modal body
+        .modal-body
+          form(action="/users/tien", method="POST").was-validated
+            div.form-group
+              label(for="name") Name:
+              input(type="text", name="name", placeholder='Enter Name', required).form-control
+              div.valid-feedback Valid.
+              div.invalid-feedback Please fill out this fied
+            div.form-group
+              label(for="age") Age:
+              input(type="text", name="age", placeholder='Enter Age', required).form-control
+              div.valid-feedback Valid.
+              div.invalid-feedback Please fill out this fied
+            div.form-group
+              label(for="phone") Phone:
+              input(type="text", name="phone", placeholder='Enter Phone', required).form-control
+              div.valid-feedback Valid.
+              div.invalid-feedback Please fill out this fied
+              
+            button Create
+        // Modal footer
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+
+  form(action='/users/search', method='GET')
+    input(type="text", name='q')
+    button Search
+  table.table
+    thead
+      tr
+        th Name
+        th Age
+        th Phone
+        th Action
+    each user in users
+      tr
+        td= user.name
+        td= user.age
+        td= user.phone
+        td
+          a(href='/users/'+ user.id) View
+          button.btn.btn-light Delete

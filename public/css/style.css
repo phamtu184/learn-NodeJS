@@ -1,0 +1,178 @@
+body{
+  background-color: white;
+  background-attachment: fixed;
+}
+
+/* ------------navbar-------------- */
+.two-navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 1.5s;
+  z-index: 1000;
+}
+.two-navbar .nav-item .fas-seft{
+  font-size: 20px;
+  color: #222222;
+  margin-left: 30px;
+}
+
+.two-navbar .nav-item .fas-seft:hover{
+  color:  rgb(0, 84, 209);
+}
+.two-navbar .navbar .navbar-nav .nav-item .nav-link{
+  color: #222222;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 15px;
+}
+.two-navbar .navbar-brand img{
+  width: 400px;
+}
+.dropdown:hover>.dropdown-menu{
+  display: block;
+}
+.navbar .navbar-nav .dropdown-menu{
+  background-clip: unset;
+  padding: 0 0; 
+  margin: 0 0;
+  
+}
+.navbar .navbar-nav .dropdown-menu ul{
+  padding: 0;
+}
+.navbar .navbar-nav .dropdown-menu a{
+  color: #222222;
+  margin: 35px 35px;
+  line-height: 2.0;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+.navbar .navbar-nav .dropdown-menu a:hover{
+  text-decoration: none;
+  color: rgb(0, 84, 209);
+}
+
+/* ---------------------home top-------------- */
+.carousel{
+  margin-top: 154px;
+}
+.carousel .carousel-inner img{
+  width: 100%;
+  height: 700px;
+}
+.carousel-caption {
+  position: relative;
+  left: 50%;
+  top: 60%;
+  transform: translate(0%, 0%);
+}
+.carousel-inner .overlay {
+  background: linear-gradient(0deg, rgba(0,0,0,0.6082808123249299) 0%, rgba(0,0,0,0.2945553221288515) 100%, rgba(255,255,255,0) 100%) top left no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+.carousel-inner h5{
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.carousel-inner h1{
+  font-size: 65px;
+  text-transform: uppercase;
+}
+.carousel-inner p{
+  font-size: 40px;
+  text-transform: capitalize;
+}
+.carousel-item .animated{
+  animation-delay: 0.4s; 
+  animation-duration: 1.5s;
+}
+/* ------------introduce------------- */
+.introduce-1{
+  background-image: url(./image/introduce-image-1.jpg);
+}
+.introduce{
+  width: 250px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  transition: transform .5s ease;
+}
+.introduce-2{
+  background-image: url(./image/introduce-image-2.jpg);
+}
+.introduce-3{
+  background-image: url(./image/introduce-image-3.jpg);
+}
+.introduce-4{
+  background-image: url(./image/introduce-image-4.jpg);
+}
+.introduce .overlay{
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,0.4822303921568627) 0%, rgba(0,0,0,0) 100%, rgba(255,255,255,0) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  transition: all 0.5s;
+  opacity: 0.8;
+}
+.introduce .overlay a{
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+.overlay:hover{
+  opacity: 1;
+}
+.introduce-1:hover, .introduce-2:hover, .introduce-3:hover, .introduce-4:hover{
+  transform: scale(1.1);
+  text-decoration: none;
+}
+ 
+/* -----------------resposive----------------- */
+@media(max-width:720px){
+  .hover-img button{
+    z-index: 2;
+    opacity: 1;
+  }
+  .two-navbar .navbar-brand img{
+    width: 200px;
+  }
+  .introduce .row .introduce-1, .introduce .row .introduce-2, .introduce .row .introduce-3, .introduce .row .introduce-4{
+    margin: 0 auto;
+  }
+  .carousel-inner h5{
+    font-family: 'Great Vibes', cursive;
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+  .carousel-inner h1{
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  .carousel-inner .carousel-caption p{
+    font-size: 20x;
+    text-transform: capitalize;
+  }
+  .carousel-caption {
+    position: relative;
+    left: 50%;
+    top: 10%;
+    transform: translate(0%, 0%);
+  }
+  .carousel .carousel-inner img{
+    width: 100%;
+    height: 400px;
+  }
+}
+

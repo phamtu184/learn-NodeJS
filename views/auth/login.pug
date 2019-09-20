@@ -1,0 +1,18 @@
+extends ../layouts/commons.pug
+block content
+  div.container
+    if errors
+      each error in errors
+        .alert.alert-danger= error
+    form.was-validated(action='/auth/login', method="POST")
+      .form-group
+        label(for='email') Username:
+        input#email.form-control(type='text', placeholder='Enter username', name='email', required='')
+        .valid-feedback Valid.
+        .invalid-feedback Please fill out this field.
+      .form-group
+        label(for='password') Password:
+        input#password.form-control(type='password', placeholder='Enter password', name='password', required='')
+        .valid-feedback Valid.
+        .invalid-feedback Please fill out this field.
+      button.btn.btn-primary(type='submit') Submit
