@@ -1,0 +1,9 @@
+extends ../layouts/commons.pug
+block content
+  .container
+    h1 Cart list
+    form(action='/products/search', method='GET')
+      input(type="text", name='q')
+      button.btn.btn-primary Search
+    .row
+      
