@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const port = 3000;
 var cookieParser = require('cookie-parser');
+
 var mongoose = require('mongoose');
-// mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost/express-demo", { useUnifiedTopology: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const userRoutes = require('./routes/user.route.js');
 const authRoutes = require('./routes/auth.route.js');

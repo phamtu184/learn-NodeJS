@@ -1,14 +1,14 @@
-var db = require('../db.js');
 var md5 = require('md5');
+var User = require('../models/user.model');
 
 module.exports.index = function(req, res){
   res.render('auth/login.pug');
 }
 
-module.exports.postAuth = function(req, res){
+module.exports.postAuth = async function(req, res){
   let email = req.body.email;
   let password = req.body.password;
-  let user = db.get('users').find({email: email}).value();
+  let user = await User.findOne({email: email}, {password: password});
   if (!user){
     res.render('auth/login.pug',{
       errors : [
@@ -19,7 +19,7 @@ module.exports.postAuth = function(req, res){
     return;
   }
   let hashedPassword = md5(password);
-  if (user.password !== hashedPassword){
+  if (user._doc.password !== hashedPassword){
     res.render('auth/login.pug',{
       errors : [
         'Sai mat khau'
